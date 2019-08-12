@@ -1,0 +1,53 @@
+.bf {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.bf::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    background: black;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.2s linear;
+
+}
+
+.bf:hover::after {
+    width: 0px;
+    height: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.linkActive {
+    color: skyblue;
+}
+
+.hf {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.hf::after {
+    content: "";
+    display: inline-block;
+    width: 0%;
+    height: 2px;
+    background: black;
+    position: absolute;
+    bottom: -5px;
+    transition: all 0.2s linear;
+
+}
+
+.hf:hover::after {
+    width: 100%;
+    height: 2px;
+}
