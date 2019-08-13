@@ -5,31 +5,31 @@
       <ul class="sort-ul">
         <li>
           <router-link class="linkclass" to="/sort/detail/1">
-            游戏开发
+            CSS
             <span>{{books_num}}篇</span>
           </router-link>
         </li>
         <li>
           <router-link class="linkclass" to="/sort/detail/2">
-            Vue开发
+            Vue
             <span>{{books_num}}篇</span>
           </router-link>
         </li>
         <li>
           <router-link class="linkclass" to="/sort/detail/3">
-            android开发
+            Webpack
             <span>{{books_num}}篇</span>
           </router-link>
         </li>
         <li>
           <router-link class="linkclass" to="/sort/detail/4">
-            设计
+            HTTP
             <span>{{books_num}}篇</span>
           </router-link>
         </li>
         <li>
           <router-link class="linkclass" to="/sort/detail/5">
-            默认分类
+            面试
             <span>{{books_num}}篇</span>
           </router-link>
         </li>
@@ -52,7 +52,6 @@ export default {
     return {
       books_num: 1,
       tagList: [
-        "脚手架",
         "bfs搜索",
         "egret",
         "mac",
@@ -79,8 +78,6 @@ export default {
   width: 50px;
   height: 50px;
   border: 1px solid #ccc;
-}
-.linkclass {
 }
 .sc-title {
   text-align: center;
@@ -114,12 +111,11 @@ export default {
 }
 .sort-ul li {
   height: 30px;
-  margin: 15px;
   border-radius: 5px;
   text-align: center;
   line-height: 30px;
   border: 1px solid #f5f5f5;
-  padding: 0 3px;
+  padding:0 3px;
 }
 .sort-ul li span {
   font-size: 13px;
@@ -155,7 +151,7 @@ a {
 @media screen and (max-width: 768px) {
   .sort-container {
     width: 100%;
-    font-size:0.9rem;
+    font-size: 0.9rem;
   }
   .sort-ul li {
     margin: 2px;

@@ -5,7 +5,7 @@
       <b-header v-else key="bye"></b-header>
     </header>
     <article>
-      <transition  name="fade">
+      <transition name="fade">
         <router-view/>
       </transition>
     </article>
@@ -79,13 +79,14 @@ export default {
 * {
   margin: 0;
   padding: 0;
+  font-family: "Times New Roman", Times, serif;
 }
 
 header {
   width: 100%;
-  min-height:7rem;
+  min-height: 7rem;
   display: flex;
-  background: #f5f5f5;
+  background: black;
   align-items: center;
   justify-content: space-around;
 }
@@ -98,15 +99,20 @@ header {
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition:all .7s linear;
+  transition: all 0.7s linear;
 }
 .fade-enter,
 .fade-leave {
   opacity: 0;
 }
-@media screen and (max-width:768px){
-  header{
-    min-height:3rem;
+.router-link-exact-active {
+  background: white;
+  color: black !important;
+  border-right: 5px solid blue;
+}
+@media screen and (max-width: 768px) {
+  header {
+    min-height: 3rem;
   }
 }
 </style>

@@ -29,6 +29,6 @@ export default {
   height: 10%;
   list-style: none;
   width: 100%;
-  background: black;
+  background: white;
 }
 </style>

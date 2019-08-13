@@ -1,31 +1,28 @@
 <template>
   <div class="container">
     <div class="main-container" v-for="book in bookList" :key="book.img">
-      <div class="img-container">
+      <!--       <div class="img-container">
         <img class="book-img" :src="book.img" alt="相册">
-      </div>
+      </div>-->
+      <p>{{book.title}}</p>
       <div class="tagger">
-        发表于
         <span>
           {{book.createDate|timeFilter(bookList.createDate)}}
+          <span class="shu"></span>
           <i class="el-icon-folder"/>
           {{book.category}}
+          <span class="shu"></span>
         </span>
         <i class="el-icon-camera-solid"/>
-        {{book.seed}}次围观
+        {{book.seed}}
       </div>
       <div class="title">
-        <span class="divider">|</span>
+        <span class="divider"></span>
         {{book.stetch | AddShu(book.stetch)}}
-      </div>
-      <div class="tag">
-        <Arrow>
-          <p slot="arrow">esset</p>
-        </Arrow>
       </div>
       <el-divider></el-divider>
       <p class="readMore">
-        <a href="#">阅读全文 >></a>
+        <router-link to="/home/detail/1">阅读全文 >></router-link>
       </p>
     </div>
   </div>
@@ -39,18 +36,27 @@ export default {
   data() {
     return {
       data: {},
-      bookList: []
+      bookList: [
+        {
+          title: "JS必备知识--防抖节流",
+          category: "javascript",
+          createDate: "2018年3月25日",
+          seed: 20,
+          stetch:
+            "想要学扎实js，必须将其必学内容学扎实。优化性能是每个web工程师必备的一项技能，我们选取其中的一种方法，那就是本文题目《防抖与节流》"
+        }
+      ]
     };
   },
   methods: {
     add() {
-      this.axios("148.70.80.173/mm/hello").then(res => {
+      /*       this.axios("148.70.80.173/mm/hello").then(res => {
         this.bookList = res.data.date;
         console.log(res)
         if(!res.data.date){
           this.$Message.error("加载失败，请联系管理员.")
         }
-      });
+      }); */
     }
   },
 
@@ -78,20 +84,12 @@ export default {
 </script>
 
 <style scoped>
-.book-img {
-  width: 100%;
-  height: 100%;
-}
 .container {
-  margin-top:-50px;
+  margin-top: -50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-flow: column;
-}
-.title {
-  font-size: 1.5rem;
-  color: gray;
 }
 .main-container {
   display: flex;
@@ -102,6 +100,45 @@ export default {
   box-shadow: 0rem 0.4rem 0.8rem 0 #ccc;
   padding: 1.5rem;
   margin: 2rem;
+}
+.main-container > *:not(.img-container) {
+  margin-top: 1rem;
+}
+.main-container > p:first-child {
+  font-size: 1.2rem;
+}
+.book-img {
+  width: 100%;
+  height: 100%;
+}
+.shu {
+  height: 24px;
+  margin: 0 0.2rem;
+  background: black;
+}
+.tagger {
+  text-align: center;
+  color: gray;
+}
+.title {
+  font-size: 1.5rem;
+  color: gray;
+}
+.tag {
+  color: white;
+  margin: 1rem 0;
+}
+.divider {
+  border-left: 2px solid gray;
+  font-size: 1rem;
+  margin: 0 0.5rem;
+}
+.readMore a {
+  color: gray;
+  text-decoration: none;
+}
+.readMore a:hover {
+  color: black;
 }
 @media screen and (max-width: 768px) {
   .main-container {
@@ -115,26 +152,5 @@ export default {
   .readMore a {
     font-size: 0.8rem;
   }
-}
-.main-container > *:not(.img-container) {
-  margin-top: 0.3rem;
-}
-.tagger {
-  text-align: center;
-}
-.tag {
-  color: white;
-  margin: 1rem 0;
-}
-.divider {
-  font-weight: bolder;
-  margin: 0 0.5rem;
-}
-.readMore a {
-  color: gray;
-  text-decoration: none;
-}
-.readMore a:hover {
-  color: black;
 }
 </style>

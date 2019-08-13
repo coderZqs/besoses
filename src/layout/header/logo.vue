@@ -55,7 +55,7 @@ export default {
   font-size: 24px;
   font-weight: bold;
   margin: 4px;
-  color: black;
+  color: white;
 }
 .divider {
   width: 50%;
